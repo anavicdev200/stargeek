@@ -1,0 +1,82 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Times New Roman', Times, serif;
+}
+.container{
+    display:grid;
+    grid-template-columns: 1fr  1fr 1fr;
+    grid-template-rows: 15vh 70vh 15vh;
+    grid-template-areas:
+    "h"
+    "m m m" 
+    "a a a"
+    "f";
+}
+header{
+    grid-area: h;
+    background-color: black;
+    padding: 40px;
+}
+
+.hesquerda{
+    display: flex;
+    justify-content: flex-start;
+    padding-bottom: 20px;
+}
+main{
+    grid-area: m;
+    background-color: black;
+    background-size: 100%;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.cards{
+    margin-left: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    column-gap: 20px;
+    padding-right: 40px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+form >label{
+    font-size: 2rem;
+    color:white;
+}
+form > input{
+ font-size: 2rem;
+ border-radius: 10px;
+ margin-bottom: 20px;
+}
+main >h1{
+    color: white;
+}
+main > form{
+    display:flex;
+    flex-direction:column;
+    width: 50%;
+}
+
+footer{
+    grid-area: f;
+    background-color: black;
+
+}
+form >input[type="submit"]{
+    background-color:blue;
+    margin-top: 50px;
+}
