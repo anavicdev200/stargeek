@@ -18,13 +18,14 @@
         </section>
         <main>
            <h1>Cadastro</h1>
-           <form action="login.html">
+           <form id="formulario">
+            <div class="mensagem"></div>
                <label for="iname">Nome</label>
-               <input type="text">
-               <label for="isenha">Senha</label>
-               <input type="password">
-               <label for="icpf">cpf</label>
-               <input type="text">
+               <input type="text" id="nome">
+               <label for="iemail">Email</label>
+               <input type="text" id="email">
+               <label for="isenha">senha</label>
+               <input type="password" id="senha">
                <input type="submit" value="Cadastre">
                
            </form>
@@ -35,5 +36,6 @@
 
 
     </header>
+    <script src="arquivo.js"></script>
 </body>
 </html>
