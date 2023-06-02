@@ -5,11 +5,24 @@ const senha = document.getElementById("senha");
 
 
 formulario.onsubmit = (evt)=>{
+    let dados = JSON.parse(localStorage.getItem("bd"));
+    let logado;
+    dados.forEach((elemento) => {
+        if(elemento.emailcliente == email.value && elemento.senhacliente == senha.value){
+            msg.innerHTML = "Aguarde redirecionando..."
+            sessionStorage.setItem("logado",JSON.stringify(dados));
+            setTimeout(()=>{
+                window.location.assign("catalogo.html");
+            }, 2000);
+            evt.preventDefault();
+            logado = "ok";
+            return true;
+
     
 
-    if (email.value == ""){
+    if (logado!= "ok"){
         evt.preventDefault();
-        msg.innerHTML = "Digite seu email";
+        msg.innerHTML = "usuario ou senha incorretos";
         email.focus();
         return null;
         
@@ -22,22 +35,5 @@ formulario.onsubmit = (evt)=>{
         senha.focus();
     }
 
-    let dados = JSON.parse(localStorage.getItem("bd"));
-    let logado;
-    dados.forEach((elemento) => {
-        if(elemento.emailcliente == email.value && elemento.senhacliente == senha.value){
-            msg.innerHTML = "Aguarde redirecionando..."
-            setTimeout(()=>{
-                window.location.assign("catalogo.html");
-            }, 2000);
-            evt.preventDefault();
-            logado = "ok";
-            return true;
-        }
-        if (logado!="ok") {
-            msg.innerHTML = "Usuario ou senha incorretos"
-            evt.preventDefault()
-            return null;
-        }
-    });
+   
 }
